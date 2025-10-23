@@ -1,5 +1,6 @@
 import { Brain, Code, Cloud, TrendingUp } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const services = [
@@ -46,30 +47,60 @@ const Services = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <Card 
+            <motion.div
               key={index}
-              className="group bg-[var(--gradient-card)] border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[var(--shadow-card)] hover:-translate-y-2 cursor-pointer"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ 
+                scale: 1.05,
+                rotateY: 5,
+                rotateX: 5,
+              }}
+              className="perspective-1000"
             >
-              <CardHeader>
-                <div className="mb-4 p-4 rounded-2xl bg-primary/10 text-primary w-fit group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                  <service.icon className="w-8 h-8" />
-                </div>
-                <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+              <Card className="group h-full bg-[var(--gradient-card)] border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[var(--shadow-card)] cursor-pointer relative overflow-hidden">
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:via-primary/5 group-hover:to-transparent transition-all duration-500 pointer-events-none" />
+                
+                <CardHeader className="relative z-10">
+                  <motion.div
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                    className="mb-4 p-4 rounded-2xl bg-primary/10 text-primary w-fit group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300 group-hover:shadow-[var(--shadow-glow)]"
+                  >
+                    <service.icon className="w-8 h-8" />
+                  </motion.div>
+                  <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription className="text-muted-foreground group-hover:text-foreground/80 transition-colors">
+                    {service.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="relative z-10">
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <motion.li
+                        key={idx}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 * idx }}
+                        className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors"
+                      >
+                        <motion.div
+                          whileHover={{ scale: 1.5 }}
+                          className="w-1.5 h-1.5 rounded-full bg-primary group-hover:shadow-[0_0_8px_var(--primary)]"
+                        />
+                        {feature}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
