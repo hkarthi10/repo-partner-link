@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/ibee-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,14 +60,11 @@ const Navbar = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-2 cursor-pointer"
+            className="flex items-center gap-3 cursor-pointer"
             onClick={() => scrollToSection("home")}
           >
-            <div className="flex items-center gap-1">
-              <span className="text-2xl font-bold text-primary">i</span>
-              <span className="text-2xl font-bold text-secondary">Bee</span>
-            </div>
-            <span className="text-xl font-semibold text-foreground">Analytics</span>
+            <img src={logo} alt="iBee Analytics Logo" className="h-10 w-10" />
+            <span className="text-xl font-semibold text-white">iBee Analytics</span>
           </motion.div>
 
           {/* Desktop Menu */}
