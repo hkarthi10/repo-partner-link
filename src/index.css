@@ -38,12 +38,16 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    --gradient-hero: linear-gradient(135deg, hsl(19 89% 58% / 0.15), hsl(220 64% 33% / 0.15));
+    --gradient-hero: linear-gradient(135deg, hsl(19 89% 58% / 0.2), hsl(220 64% 33% / 0.2));
     --gradient-card: linear-gradient(180deg, hsl(220 18% 12%), hsl(220 18% 10%));
     --gradient-accent: linear-gradient(135deg, hsl(19 89% 58%), hsl(19 89% 68%));
+    --gradient-orange-blue: linear-gradient(135deg, hsl(19 89% 58% / 0.3), hsl(220 64% 33% / 0.3));
+    --gradient-radial: radial-gradient(circle at 50% 50%, hsl(19 89% 58% / 0.15), hsl(220 64% 33% / 0.15), transparent);
     
-    --shadow-glow: 0 0 40px hsl(19 89% 58% / 0.15);
+    --shadow-glow: 0 0 50px hsl(19 89% 58% / 0.3);
+    --shadow-glow-blue: 0 0 50px hsl(220 64% 33% / 0.3);
     --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.4);
+    --shadow-elegant: 0 20px 60px hsl(0 0% 0% / 0.6);
 
     --sidebar-background: 220 18% 12%;
     --sidebar-foreground: 0 0% 95%;
@@ -101,5 +105,33 @@ All colors MUST be HSL.
 
   .perspective-1000 {
     perspective: 1000px;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .gradient-animate {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
   }
 }

@@ -9,26 +9,38 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20 pt-32">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-[var(--gradient-hero)] opacity-50" />
+      {/* Animated Gradient Background */}
+      <div className="absolute inset-0 bg-[var(--gradient-hero)] opacity-60" />
+      
+      {/* Floating Gradient Orbs */}
+      <div className="absolute top-20 left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-glow" />
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full blur-3xl animate-float" />
       
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(220_15%_20%_/_0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(220_15%_20%_/_0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
       
       {/* Content */}
       <div className="relative z-10 text-center max-w-5xl mx-auto space-y-8">
-        {/* Logo Badge */}
+        {/* Logo Badge with Glow Effect */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card/50 border border-primary/20 backdrop-blur-sm"
+          className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-card/50 border border-primary/30 backdrop-blur-sm group hover:border-primary/50 transition-all duration-300"
+          whileHover={{ scale: 1.05 }}
         >
-          <div className="flex items-center gap-1">
-            <span className="text-2xl font-bold text-primary">i</span>
-            <span className="text-2xl font-bold text-secondary">Bee</span>
-          </div>
-          <span className="text-xl font-semibold text-foreground">Analytics</span>
+          {/* Glow Effect */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+          
+          <img 
+            src="/src/assets/ibee-logo.png" 
+            alt="iBee Analytics Logo" 
+            className="relative h-12 w-12 drop-shadow-[0_0_20px_rgba(242,121,53,0.5)]" 
+          />
+          <span className="relative text-2xl font-bold text-white tracking-wide">
+            iBee Analytics
+          </span>
         </motion.div>
 
         {/* Badge */}
@@ -57,7 +69,8 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"
+            className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent gradient-animate"
+            style={{ backgroundSize: '200% 200%' }}
           >
             AI-Driven Digital Marketing
           </motion.span>
@@ -83,10 +96,14 @@ const Hero = () => {
           <Button 
             onClick={scrollToContact}
             size="lg" 
-            className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-[var(--shadow-glow)] hover:scale-105"
+            className="group relative overflow-hidden bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground px-10 py-7 text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-[var(--shadow-glow)] hover:scale-105 border border-primary/50"
           >
-            Get Started Today
-            <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+            <span className="relative z-10 flex items-center gap-2">
+              Get Started Today
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
+            </span>
+            {/* Animated gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-secondary/50 to-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Button>
         </motion.div>
       </div>

@@ -47,60 +47,66 @@ const Services = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ 
-                scale: 1.05,
-                rotateY: 5,
-                rotateX: 5,
-              }}
-              className="perspective-1000"
-            >
-              <Card className="group h-full bg-[var(--gradient-card)] border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[var(--shadow-card)] cursor-pointer relative overflow-hidden">
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:via-primary/5 group-hover:to-transparent transition-all duration-500 pointer-events-none" />
-                
-                <CardHeader className="relative z-10">
-                  <motion.div
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                    className="mb-4 p-4 rounded-2xl bg-primary/10 text-primary w-fit group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300 group-hover:shadow-[var(--shadow-glow)]"
-                  >
-                    <service.icon className="w-8 h-8" />
-                  </motion.div>
-                  <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className="text-muted-foreground group-hover:text-foreground/80 transition-colors">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="relative z-10">
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <motion.li
-                        key={idx}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 * idx }}
-                        className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors"
-                      >
-                        <motion.div
-                          whileHover={{ scale: 1.5 }}
-                          className="w-1.5 h-1.5 rounded-full bg-primary group-hover:shadow-[0_0_8px_var(--primary)]"
-                        />
-                        {feature}
-                      </motion.li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.03,
+                  y: -10,
+                  rotateY: 5,
+                  transition: { duration: 0.3 }
+                }}
+                className="group perspective-1000"
+              >
+                <Card className="relative h-full bg-card/50 backdrop-blur-sm border-border transition-all duration-300 hover:border-primary/50 hover:shadow-[var(--shadow-glow)] overflow-hidden">
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  
+                  {/* Animated border effect */}
+                  <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
+                  </div>
+
+                  <CardHeader className="relative">
+                    <div className="mb-4 relative">
+                      <div className="relative inline-block">
+                        <service.icon className="w-14 h-14 text-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-6" />
+                        {/* Icon glow effect */}
+                        <div className="absolute inset-0 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                          <service.icon className="w-14 h-14 text-primary" />
+                        </div>
+                      </div>
+                    </div>
+                    <CardTitle className="text-2xl mb-3 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="text-base leading-relaxed">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="relative">
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <motion.li
+                          key={featureIndex}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.3, delay: 0.5 + featureIndex * 0.1 }}
+                          viewport={{ once: true }}
+                          className="flex items-start gap-3 text-sm text-muted-foreground group/item"
+                        >
+                          <span className="text-primary mt-1 text-lg transition-transform group-hover/item:scale-125">•</span>
+                          <span className="group-hover/item:text-foreground transition-colors">{feature}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </motion.div>
           ))}
         </div>
       </div>

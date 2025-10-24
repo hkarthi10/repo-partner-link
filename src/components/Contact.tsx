@@ -81,7 +81,7 @@ const Contact = () => {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="bg-card border-border focus:border-primary transition-colors h-12"
+                  className="bg-card border-border focus:border-primary/50 focus:shadow-[0_0_20px_rgba(242,121,53,0.2)] transition-all duration-300 h-12"
                 />
               </div>
               <div>
@@ -90,7 +90,7 @@ const Contact = () => {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="bg-card border-border focus:border-primary transition-colors h-12"
+                  className="bg-card border-border focus:border-primary/50 focus:shadow-[0_0_20px_rgba(242,121,53,0.2)] transition-all duration-300 h-12"
                 />
               </div>
               <div>
@@ -98,7 +98,7 @@ const Contact = () => {
                   placeholder="Your Message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="bg-card border-border focus:border-primary transition-colors min-h-[150px] resize-none"
+                  className="bg-card border-border focus:border-primary/50 focus:shadow-[0_0_20px_rgba(242,121,53,0.2)] transition-all duration-300 min-h-[150px] resize-none"
                 />
               </div>
             </div>
