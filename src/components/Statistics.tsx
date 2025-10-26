@@ -102,7 +102,7 @@ const Statistics = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative py-20 px-4 overflow-hidden"
+      className="relative py-24 px-8 overflow-hidden"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 bg-[var(--gradient-orange-blue)] opacity-30" />
@@ -111,7 +111,7 @@ const Statistics = () => {
       <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1.5s' }} />
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-full mx-auto">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

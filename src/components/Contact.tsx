@@ -34,8 +34,12 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 relative">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="relative py-24 px-8 overflow-hidden bg-gradient-to-b from-card/30 to-background">
+      {/* Background Elements */}
+      <div className="absolute top-40 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />
+      <div className="absolute bottom-40 left-20 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" />
+      
+      <div className="max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-16 space-y-4 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">

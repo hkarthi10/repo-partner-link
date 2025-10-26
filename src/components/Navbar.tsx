@@ -55,37 +55,37 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-3 cursor-pointer"
+            whileHover={{ scale: 1.02 }}
+            className="flex items-center gap-4 cursor-pointer"
             onClick={() => scrollToSection("home")}
           >
-            <img src={logo} alt="iBee Analytics Logo" className="h-10 w-10" />
-            <span className="text-xl font-semibold text-white">iBee Analytics</span>
+            <img src={logo} alt="iBee Analytics Logo" className="h-16 w-16 drop-shadow-[0_0_15px_rgba(242,121,53,0.4)]" />
+            <span className="text-2xl font-bold text-white tracking-tight">iBee Analytics</span>
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {menuItems.map((item) => (
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`relative text-sm font-medium transition-colors ${
+                className={`relative text-base font-medium transition-all duration-300 ${
                   activeSection === item.id
                     ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-foreground/80 hover:text-foreground"
                 }`}
               >
                 {item.name}
                 {activeSection === item.id && (
                   <motion.div
                     layoutId="activeSection"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full shadow-[0_0_8px_rgba(242,121,53,0.6)]"
                     initial={false}
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />

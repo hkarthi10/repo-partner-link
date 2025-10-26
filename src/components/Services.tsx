@@ -31,8 +31,12 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 px-4 relative">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="relative py-24 px-8 overflow-hidden bg-gradient-to-b from-background to-card/30">
+      {/* Background Elements */}
+      <div className="absolute top-20 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse-glow" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
+      
+      <div className="max-w-full mx-auto relative z-10">
         <div className="text-center mb-16 space-y-4 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">

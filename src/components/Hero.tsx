@@ -8,39 +8,31 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20 pt-32">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-8 py-20 pt-32">
       {/* Animated Gradient Background */}
-      <div className="absolute inset-0 bg-[var(--gradient-hero)] opacity-60" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/10" />
       
-      {/* Floating Gradient Orbs */}
-      <div className="absolute top-20 left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-glow" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full blur-3xl animate-float" />
+      {/* Floating Gradient Orbs - moved away from center */}
+      <div className="absolute top-40 left-10 w-96 h-96 bg-secondary/15 rounded-full blur-3xl animate-pulse-glow" />
+      <div className="absolute bottom-40 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }} />
       
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(220_15%_20%_/_0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(220_15%_20%_/_0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
       
       {/* Content */}
-      <div className="relative z-10 text-center max-w-5xl mx-auto space-y-8">
-        {/* Logo Badge with Glow Effect */}
+      <div className="relative z-10 text-center max-w-6xl mx-auto space-y-8">
+        {/* Logo - Clean and Prominent */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-card/50 border border-primary/30 backdrop-blur-sm group hover:border-primary/50 transition-all duration-300"
-          whileHover={{ scale: 1.05 }}
+          className="flex justify-center"
         >
-          {/* Glow Effect */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
-          
           <img 
             src="/src/assets/ibee-logo.png" 
             alt="iBee Analytics Logo" 
-            className="relative h-12 w-12 drop-shadow-[0_0_20px_rgba(242,121,53,0.5)]" 
+            className="h-24 w-24 drop-shadow-[0_0_25px_rgba(242,121,53,0.5)]" 
           />
-          <span className="relative text-2xl font-bold text-white tracking-wide">
-            iBee Analytics
-          </span>
         </motion.div>
 
         {/* Badge */}
