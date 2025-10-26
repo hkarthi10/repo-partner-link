@@ -16,7 +16,7 @@ const Footer = () => {
               iBee Analytics
             </h3>
             <p className="text-muted-foreground">
-              Innovative AI-driven solutions for modern businesses
+              Turning data into intelligence. One autonomous solution at a time.
             </p>
           </div>
 
@@ -62,10 +62,15 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 border-t border-border text-center">
+        <div className="pt-8 border-t border-border text-center space-y-2">
           <p className="text-muted-foreground">
             © {currentYear} iBee Analytics. All rights reserved.
           </p>
+          <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
+            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <span>•</span>
+            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>

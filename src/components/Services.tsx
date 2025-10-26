@@ -1,116 +1,183 @@
-import { Brain, Code, Cloud, TrendingUp } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { Card } from "@/components/ui/card";
+import { 
+  BarChart3, Shield, TrendingUp, Megaphone, Palette, 
+  Globe, Code, Headphones 
+} from "lucide-react";
+import serviceBi from "@/assets/service-bi.jpg";
+import serviceAiNetwork from "@/assets/service-ai-network.jpg";
+import servicePrediction from "@/assets/service-prediction.jpg";
+import serviceMarketing from "@/assets/service-marketing.jpg";
+import serviceDesign from "@/assets/service-design.jpg";
+import serviceWeb from "@/assets/service-web.jpg";
+import serviceWebapp from "@/assets/service-webapp.jpg";
+import serviceSupport from "@/assets/service-support.jpg";
+
+const services = [
+  {
+    icon: BarChart3,
+    title: "Business Intelligence Reporting",
+    description: "Transform raw data into clear, actionable insights with interactive dashboards and automated reports.",
+    image: serviceBi,
+    features: [
+      "Real-Time KPI Dashboards",
+      "Custom BI Reports (Power BI, Tableau, Looker)",
+      "Data Warehousing & ETL Pipelines",
+      "Executive Summary & Trend Analysis"
+    ]
+  },
+  {
+    icon: Shield,
+    title: "Agentic AI-Driven Network & Compliance",
+    description: "Autonomous AI agents that manage, secure, and ensure compliance across your digital infrastructure.",
+    image: serviceAiNetwork,
+    features: [
+      "Self-Healing Network Agents",
+      "AI-Powered Compliance Automation (GDPR, HIPAA, SOC 2)",
+      "Intelligent Access Control",
+      "Proactive Threat Response"
+    ]
+  },
+  {
+    icon: TrendingUp,
+    title: "Prediction & Advanced Analytics",
+    description: "Forecast trends, optimize decisions, and uncover opportunities using predictive modeling.",
+    image: servicePrediction,
+    features: [
+      "Demand & Sales Forecasting",
+      "Customer Churn Prediction",
+      "Risk Assessment & Fraud Detection",
+      "Scenario Planning & Optimization"
+    ]
+  },
+  {
+    icon: Megaphone,
+    title: "Digital Marketing That Converts",
+    description: "High-ROI campaigns powered by real-time analytics to grow your brand across every channel.",
+    image: serviceMarketing,
+    features: [
+      "SEO & Content Strategy",
+      "Paid Ads (Google, Meta, LinkedIn)",
+      "Social Media Management",
+      "Conversion Rate Optimization (CRO)"
+    ]
+  },
+  {
+    icon: Palette,
+    title: "Design and Branding",
+    description: "Craft a compelling visual identity that resonates and sets your brand apart.",
+    image: serviceDesign,
+    features: [
+      "Brand Strategy & Identity",
+      "Logo, Typography, Color Palette",
+      "Graphic Design (Print & Digital)",
+      "UI/UX for Apps & Websites"
+    ]
+  },
+  {
+    icon: Globe,
+    title: "High-Performance Websites",
+    description: "Fast, secure, and stunning websites built to perform on every device and dominate search engines.",
+    image: serviceWeb,
+    features: [
+      "Custom Design & UX/UI",
+      "Fully Responsive Layout",
+      "Blazing-Fast Speed (Core Web Vitals)",
+      "E-commerce & Secure Payments"
+    ]
+  },
+  {
+    icon: Code,
+    title: "Scalable Web Applications",
+    description: "Custom web apps that automate workflows, streamline operations, and grow with your company.",
+    image: serviceWebapp,
+    features: [
+      "Full-Stack Development (React, Node.js, Python)",
+      "API & Database Design",
+      "Progressive Web Apps (PWA)",
+      "CRM & ERP Integrations"
+    ]
+  },
+  {
+    icon: Headphones,
+    title: "Maintenance and Support",
+    description: "Proactive care to keep your digital assets secure, fast, and future-ready.",
+    image: serviceSupport,
+    features: [
+      "24/7 Technical Support",
+      "Security Monitoring & Backups",
+      "Content & Feature Updates",
+      "Performance Reports & Training"
+    ]
+  }
+];
 
 const Services = () => {
-  const services = [
-    {
-      icon: Brain,
-      title: "AI Development",
-      description: "Custom AI solutions, machine learning models, and intelligent automation to transform your business operations.",
-      features: ["Machine Learning", "NLP Solutions", "Computer Vision", "Predictive Analytics"]
-    },
-    {
-      icon: Code,
-      title: "Web Development",
-      description: "Modern, responsive websites and web applications built with cutting-edge technologies for optimal performance.",
-      features: ["React & Next.js", "Full-Stack Development", "E-commerce Solutions", "Progressive Web Apps"]
-    },
-    {
-      icon: Cloud,
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure, migration services, and optimization for AWS, Azure, and Google Cloud platforms.",
-      features: ["Cloud Migration", "Infrastructure Setup", "DevOps & CI/CD", "Cloud Security"]
-    },
-    {
-      icon: TrendingUp,
-      title: "Digital Marketing",
-      description: "Data-driven marketing strategies powered by AI to maximize your ROI and grow your digital presence.",
-      features: ["SEO & SEM", "Social Media Marketing", "Content Strategy", "Analytics & Reporting"]
-    }
-  ];
-
   return (
-    <section id="services" className="relative py-24 px-8 overflow-hidden bg-gradient-to-b from-background to-card/30">
+    <section id="services" className="relative py-24 px-8 overflow-hidden bg-gradient-to-b from-card/30 to-background">
       {/* Background Elements */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse-glow" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
+      <div className="absolute top-40 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />
+      <div className="absolute bottom-40 left-20 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" />
       
-      <div className="max-w-full mx-auto relative z-10">
-        <div className="text-center mb-16 space-y-4 animate-fade-in">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 space-y-4"
+        >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Our Services
+              Our Core Services
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive solutions tailored to your business needs
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Data-driven digital solutions that turn clicks into customers and ideas into scalable revenue
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ 
-                  scale: 1.03,
-                  y: -10,
-                  rotateY: 5,
-                  transition: { duration: 0.3 }
-                }}
-                className="group perspective-1000"
-              >
-                <Card className="relative h-full bg-card/50 backdrop-blur-sm border-border transition-all duration-300 hover:border-primary/50 hover:shadow-[var(--shadow-glow)] overflow-hidden">
-                  {/* Gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                  
-                  {/* Animated border effect */}
-                  <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Card className="group relative overflow-hidden bg-[var(--gradient-card)] border-border hover:border-primary/50 transition-all duration-500 hover:shadow-[var(--shadow-glow)] h-full">
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent" />
+                  <div className="absolute bottom-4 left-4 p-3 rounded-xl bg-primary/10 backdrop-blur-sm border border-primary/20">
+                    <service.icon className="w-8 h-8 text-primary" />
                   </div>
-
-                  <CardHeader className="relative">
-                    <div className="mb-4 relative">
-                      <div className="relative inline-block">
-                        <service.icon className="w-14 h-14 text-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-6" />
-                        {/* Icon glow effect */}
-                        <div className="absolute inset-0 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300">
-                          <service.icon className="w-14 h-14 text-primary" />
-                        </div>
-                      </div>
-                    </div>
-                    <CardTitle className="text-2xl mb-3 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-                      {service.title}
-                    </CardTitle>
-                    <CardDescription className="text-base leading-relaxed">
-                      {service.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="relative">
-                    <ul className="space-y-3">
-                      {service.features.map((feature, featureIndex) => (
-                        <motion.li
-                          key={featureIndex}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3, delay: 0.5 + featureIndex * 0.1 }}
-                          viewport={{ once: true }}
-                          className="flex items-start gap-3 text-sm text-muted-foreground group/item"
-                        >
-                          <span className="text-primary mt-1 text-lg transition-transform group-hover/item:scale-125">•</span>
-                          <span className="group-hover/item:text-foreground transition-colors">{feature}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                </div>
+                
+                <div className="p-6 space-y-4">
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="text-primary mt-1">•</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
