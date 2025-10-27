@@ -56,15 +56,15 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="flex items-center gap-4 cursor-pointer"
+            className="flex items-center gap-5 cursor-pointer ml-8"
             onClick={() => scrollToSection("home")}
           >
-            <img src={logo} alt="iBee Analytics Logo" className="h-16 w-16 drop-shadow-[0_0_15px_rgba(242,121,53,0.4)]" />
-            <span className="text-2xl font-bold text-white tracking-tight">iBee Analytics</span>
+            <img src={logo} alt="iBee Analytics Logo" className="h-20 w-20" />
+            <span className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight">iBee Analytics</span>
           </motion.div>
 
           {/* Desktop Menu */}
@@ -75,10 +75,10 @@ const Navbar = () => {
                 onClick={() => scrollToSection(item.id)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`relative text-base font-medium transition-all duration-300 ${
+                className={`relative text-lg font-semibold transition-all duration-300 ${
                   activeSection === item.id
                     ? "text-primary"
-                    : "text-foreground/80 hover:text-foreground"
+                    : "text-foreground hover:text-primary"
                 }`}
               >
                 {item.name}

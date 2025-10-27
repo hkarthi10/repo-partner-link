@@ -154,7 +154,6 @@ const Services = () => {
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/70 to-transparent" />
                   <div className="absolute bottom-4 left-4 p-3 rounded-xl bg-primary/20 backdrop-blur-md border border-primary/30 group-hover:scale-110 transition-transform duration-300">
                     <service.icon className="w-8 h-8 text-primary drop-shadow-lg" />
                   </div>
