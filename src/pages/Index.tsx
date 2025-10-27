@@ -7,17 +7,27 @@ import AIModules from "@/components/AIModules";
 import Statistics from "@/components/Statistics";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import SectionDivider from "@/components/SectionDivider";
+import FloatingStats from "@/components/FloatingStats";
 
 const Index = () => {
   return (
     <div className="min-h-screen w-full">
       <Navbar />
       <Hero />
+      <SectionDivider variant="gradient" />
       <CapabilitiesCarousel />
+      <SectionDivider variant="dots" />
+      <FloatingStats />
+      <SectionDivider variant="wave" />
       <About />
+      <SectionDivider variant="default" />
       <Services />
+      <SectionDivider variant="gradient" />
       <AIModules />
+      <SectionDivider variant="dots" />
       <Statistics />
+      <SectionDivider variant="wave" />
       <Contact />
       <Footer />
     </div>
