@@ -8,23 +8,23 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 15% 15%;
+    --background: 210 40% 98%;
+    --foreground: 220 18% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
+    --card-foreground: 220 18% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 15%;
+    --popover-foreground: 220 18% 12%;
 
     --primary: 19 89% 58%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 70% 96%;
-    --secondary-foreground: 220 15% 15%;
+    --secondary: 220 64% 45%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 95%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 40%;
 
     --accent: 19 89% 58%;
     --accent-foreground: 0 0% 100%;
@@ -32,30 +32,30 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
+    --border: 220 15% 85%;
+    --input: 220 15% 85%;
     --ring: 19 89% 58%;
 
     --radius: 0.75rem;
 
-    --gradient-hero: linear-gradient(135deg, hsl(19 89% 96% / 0.8), hsl(220 70% 97% / 0.8));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 70% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(19 89% 96% / 0.9), hsl(220 70% 96% / 0.9));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100% / 0.95), hsl(220 70% 98% / 0.95));
     --gradient-accent: linear-gradient(135deg, hsl(19 89% 58%), hsl(19 89% 68%));
-    --gradient-orange-blue: linear-gradient(135deg, hsl(19 89% 95% / 0.7), hsl(220 70% 96% / 0.7));
-    --gradient-radial: radial-gradient(circle at 50% 50%, hsl(19 89% 96% / 0.4), hsl(220 70% 97% / 0.4), transparent);
+    --gradient-orange-blue: linear-gradient(135deg, hsl(19 89% 92%), hsl(220 70% 94%));
+    --gradient-radial: radial-gradient(circle at 50% 50%, hsl(19 89% 92% / 0.6), hsl(220 70% 94% / 0.6), transparent);
     
-    --shadow-glow: 0 0 40px hsl(19 89% 58% / 0.15);
-    --shadow-glow-blue: 0 0 40px hsl(220 64% 45% / 0.15);
-    --shadow-card: 0 4px 20px hsl(220 15% 15% / 0.08);
-    --shadow-elegant: 0 10px 40px hsl(220 15% 15% / 0.12);
+    --shadow-glow: 0 8px 32px hsl(19 89% 58% / 0.25);
+    --shadow-glow-blue: 0 8px 32px hsl(220 64% 45% / 0.25);
+    --shadow-card: 0 4px 24px hsl(220 15% 15% / 0.1);
+    --shadow-elegant: 0 12px 48px hsl(220 15% 15% / 0.15);
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 15% 15%;
+    --sidebar-foreground: 220 18% 12%;
     --sidebar-primary: 19 89% 58%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 15% 95%;
-    --sidebar-accent-foreground: 220 15% 15%;
-    --sidebar-border: 220 15% 88%;
+    --sidebar-accent: 220 15% 92%;
+    --sidebar-accent-foreground: 220 18% 12%;
+    --sidebar-border: 220 15% 85%;
     --sidebar-ring: 19 89% 58%;
   }
 

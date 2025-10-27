@@ -147,36 +147,39 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="group relative overflow-hidden bg-[var(--gradient-card)] border-border hover:border-primary/50 transition-all duration-500 hover:shadow-[var(--shadow-glow)] h-full">
+              <div className="group relative overflow-hidden bg-[var(--gradient-card)] border border-border/50 hover:border-primary/50 transition-all duration-700 hover:shadow-[var(--shadow-glow)] h-full rounded-2xl backdrop-blur-sm">
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent" />
-                  <div className="absolute bottom-4 left-4 p-3 rounded-xl bg-primary/10 backdrop-blur-sm border border-primary/20">
-                    <service.icon className="w-8 h-8 text-primary" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/70 to-transparent" />
+                  <div className="absolute bottom-4 left-4 p-3 rounded-xl bg-primary/20 backdrop-blur-md border border-primary/30 group-hover:scale-110 transition-transform duration-300">
+                    <service.icon className="w-8 h-8 text-primary drop-shadow-lg" />
                   </div>
                 </div>
                 
-                <div className="p-6 space-y-4">
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <div className="p-8 space-y-4">
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
                     {service.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
                     {service.description}
                   </p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 pt-2">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <span className="text-primary mt-1">•</span>
+                      <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground group-hover:translate-x-1 transition-transform duration-300" style={{ transitionDelay: `${idx * 50}ms` }}>
+                        <span className="text-primary mt-1 font-bold">•</span>
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-              </Card>
+                
+                {/* Animated gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-2xl" />
+              </div>
             </motion.div>
           ))}
         </div>

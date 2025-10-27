@@ -21,31 +21,6 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 text-center max-w-6xl mx-auto space-y-8">
-        {/* Logo - Clean and Prominent */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-center"
-        >
-          <img 
-            src="/src/assets/ibee-logo.png" 
-            alt="iBee Analytics Logo" 
-            className="h-24 w-24 drop-shadow-[0_0_25px_rgba(242,121,53,0.5)]" 
-          />
-        </motion.div>
-
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border backdrop-blur-sm"
-        >
-          <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium text-muted-foreground">AI-Powered Innovation</span>
-        </motion.div>
-
         {/* Main Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

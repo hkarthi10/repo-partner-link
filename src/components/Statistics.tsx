@@ -146,19 +146,19 @@ const Statistics = () => {
                 }}
                 className="group relative perspective-1000"
               >
-                <div className="relative bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-8 text-center transition-all duration-300 hover:border-primary/50 hover:shadow-[var(--shadow-glow)]">
+                <div className="relative bg-[var(--gradient-card)] backdrop-blur-md border border-border/50 rounded-2xl p-10 text-center transition-all duration-700 hover:border-primary/60 hover:shadow-[var(--shadow-glow)] hover:scale-105">
                   {/* Icon */}
                   <div className="flex justify-center mb-6">
-                    <div className={`relative ${stat.color}`}>
-                      <Icon className="w-12 h-12" strokeWidth={1.5} />
-                      <div className="absolute inset-0 blur-xl opacity-50">
-                        <Icon className="w-12 h-12" />
+                    <div className={`relative ${stat.color} transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6`}>
+                      <Icon className="w-14 h-14 drop-shadow-lg" strokeWidth={1.5} />
+                      <div className="absolute inset-0 blur-2xl opacity-60">
+                        <Icon className="w-14 h-14" />
                       </div>
                     </div>
                   </div>
 
                   {/* Number */}
-                  <div className={`mb-3 ${stat.color} transition-all duration-300 group-hover:scale-110`}>
+                  <div className={`mb-4 ${stat.color} transition-all duration-500 group-hover:scale-110`}>
                     <CountUpAnimation 
                       endValue={stat.value} 
                       suffix={stat.suffix}
@@ -167,12 +167,15 @@ const Statistics = () => {
                   </div>
 
                   {/* Label */}
-                  <p className="text-muted-foreground font-medium text-lg">
+                  <p className="text-muted-foreground font-semibold text-lg">
                     {stat.label}
                   </p>
 
-                  {/* Hover Gradient Border Effect */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/0 via-primary/20 to-secondary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  {/* Animated Gradient Border Effect */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                  
+                  {/* Corner accent */}
+                  <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-primary/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tl-full" />
                 </div>
               </motion.div>
             );

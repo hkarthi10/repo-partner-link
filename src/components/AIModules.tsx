@@ -103,19 +103,19 @@ const AIModules = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <Card className="group relative overflow-hidden bg-[var(--gradient-card)] border-border hover:border-secondary/50 transition-all duration-500 hover:shadow-[var(--shadow-glow-blue)] h-full p-6">
+              <div className="group relative overflow-hidden bg-[var(--gradient-card)] border border-border/50 hover:border-secondary/60 transition-all duration-700 hover:shadow-[var(--shadow-glow-blue)] h-full p-8 rounded-2xl backdrop-blur-sm">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="p-3 rounded-xl bg-secondary/10 group-hover:bg-secondary/20 transition-colors">
-                      <module.icon className="w-6 h-6 text-secondary group-hover:rotate-12 transition-transform duration-300" />
+                    <div className="p-3 rounded-xl bg-secondary/15 group-hover:bg-secondary/30 transition-all duration-300 group-hover:scale-110">
+                      <module.icon className="w-7 h-7 text-secondary group-hover:rotate-12 transition-transform duration-500 drop-shadow-lg" />
                     </div>
                   </div>
                   
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-foreground">
+                  <div className="space-y-3">
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-secondary transition-colors duration-300">
                       {module.title}
                     </h3>
-                    <p className="text-sm font-semibold text-secondary">
+                    <p className="text-sm font-semibold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
                       {module.tagline}
                     </p>
                     <p className="text-sm text-muted-foreground leading-relaxed">
@@ -124,9 +124,12 @@ const AIModules = () => {
                   </div>
                 </div>
 
-                {/* Hover gradient effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              </Card>
+                {/* Animated gradient effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-2xl" />
+                
+                {/* Subtle corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-full" />
+              </div>
             </motion.div>
           ))}
         </div>

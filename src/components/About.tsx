@@ -113,19 +113,22 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="group relative overflow-hidden bg-[var(--gradient-card)] border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[var(--shadow-glow)] p-6 h-full">
+              <div className="group relative overflow-hidden bg-[var(--gradient-card)] border border-border/50 hover:border-primary/60 transition-all duration-500 hover:shadow-[var(--shadow-glow)] p-8 h-full rounded-2xl backdrop-blur-sm">
                 <div className="space-y-4">
-                  <div className="p-3 rounded-xl bg-primary/10 w-fit group-hover:bg-primary/20 transition-colors">
-                    <feature.icon className="w-6 h-6 text-primary" />
+                  <div className="p-3 rounded-xl bg-primary/15 w-fit group-hover:bg-primary/30 transition-all duration-300 group-hover:scale-110">
+                    <feature.icon className="w-7 h-7 text-primary drop-shadow-lg" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                     {feature.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
-              </Card>
+                
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl" />
+              </div>
             </motion.div>
           ))}
         </div>
@@ -150,13 +153,13 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="group relative overflow-hidden bg-[var(--gradient-card)] border-border hover:border-primary/50 transition-all duration-500 hover:shadow-[var(--shadow-glow)] p-8">
+                <div className="group relative overflow-hidden bg-[var(--gradient-card)] border border-border/50 hover:border-primary/60 transition-all duration-700 hover:shadow-[var(--shadow-glow)] p-10 rounded-2xl backdrop-blur-sm">
                   <div className="flex items-start gap-6">
-                    <div className="p-4 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors flex-shrink-0">
-                      <spec.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    <div className="p-4 rounded-xl bg-primary/15 group-hover:bg-primary/30 transition-all duration-300 flex-shrink-0 group-hover:scale-110">
+                      <spec.icon className="w-9 h-9 text-primary group-hover:rotate-6 transition-transform duration-500 drop-shadow-lg" />
                     </div>
                     <div className="space-y-3">
-                      <h4 className="text-2xl font-bold text-foreground">
+                      <h4 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                         {spec.title}
                       </h4>
                       <p className="text-muted-foreground leading-relaxed">
@@ -164,7 +167,10 @@ const About = () => {
                       </p>
                     </div>
                   </div>
-                </Card>
+                  
+                  {/* Animated gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-2xl" />
+                </div>
               </motion.div>
             ))}
           </div>
