@@ -9,15 +9,40 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-8 py-20 pt-32">
-      {/* Animated Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/10" />
+      {/* Dynamic Mesh Gradient Background */}
+      <div className="absolute inset-0 bg-background" />
+      <div className="absolute inset-0 opacity-80 animate-mesh-move" style={{ background: 'var(--gradient-mesh)' }} />
       
-      {/* Floating Gradient Orbs - moved away from center */}
-      <div className="absolute top-40 left-10 w-96 h-96 bg-secondary/15 rounded-full blur-3xl animate-pulse-glow" />
-      <div className="absolute bottom-40 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }} />
+      {/* Floating Gradient Orbs with enhanced visibility */}
+      <div className="absolute top-20 left-[5%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-3xl animate-pulse-glow" />
+      <div className="absolute bottom-20 right-[5%] w-[500px] h-[500px] bg-secondary/25 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-accent/15 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '3s' }} />
       
-      {/* Animated Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(220_15%_20%_/_0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(220_15%_20%_/_0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+      {/* Animated Particles */}
+      {[...Array(8)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-2 h-2 bg-primary/30 rounded-full"
+          style={{
+            left: `${10 + (i * 12)}%`,
+            top: `${20 + (i % 3) * 25}%`,
+          }}
+          animate={{
+            y: [0, -100, 0],
+            x: [0, 50, 0],
+            opacity: [0.3, 0.8, 0.3],
+          }}
+          transition={{
+            duration: 6 + i,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: i * 0.5,
+          }}
+        />
+      ))}
+      
+      {/* Enhanced Grid Pattern with better visibility */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(220_70%_50%_/_0.08)_1px,transparent_1px),linear-gradient(to_bottom,hsl(220_70%_50%_/_0.08)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
       
       {/* Content */}
       <div className="relative z-10 text-center max-w-6xl mx-auto space-y-8">
@@ -28,7 +53,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-5xl md:text-7xl font-bold tracking-tight"
         >
-          <span className="bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-foreground via-foreground to-foreground bg-clip-text text-transparent drop-shadow-sm">
             Innovative Solutions for
           </span>
           <br />
@@ -36,24 +61,24 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent gradient-animate"
+            className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent gradient-animate drop-shadow-lg"
             style={{ backgroundSize: '200% 200%' }}
           >
             AI-Driven Digital Marketing
           </motion.span>
         </motion.h1>
 
-        {/* Tagline */}
+        {/* Tagline with enhanced contrast */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+          className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium"
         >
           Web Development, AI Development, and Cloud Services
         </motion.p>
 
-        {/* CTA Button */}
+        {/* CTA Button with enhanced styling */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -63,14 +88,24 @@ const Hero = () => {
           <Button 
             onClick={scrollToContact}
             size="lg" 
-            className="group relative overflow-hidden bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground px-10 py-7 text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-[var(--shadow-glow)] hover:scale-105 border border-primary/50"
+            className="group relative overflow-hidden bg-gradient-to-r from-primary via-primary to-secondary hover:from-primary/90 hover:via-secondary/90 hover:to-primary/90 text-primary-foreground px-10 py-7 text-lg font-semibold rounded-full transition-all duration-500 hover:shadow-[var(--shadow-glow)] hover:scale-105 border-2 border-primary/30"
           >
             <span className="relative z-10 flex items-center gap-2">
               Get Started Today
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
             </span>
-            {/* Animated gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-secondary/50 to-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            {/* Animated shimmer effect */}
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+              animate={{
+                x: ['-100%', '100%'],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatDelay: 1,
+              }}
+            />
           </Button>
         </motion.div>
       </div>
