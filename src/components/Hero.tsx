@@ -9,13 +9,13 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-8 py-20 pt-32">
-      {/* Subtle Mesh Gradient Background */}
+      {/* Enhanced Mesh Gradient Background */}
       <div className="absolute inset-0 bg-background" />
-      <div className="absolute inset-0 opacity-60" style={{ background: 'var(--gradient-mesh)' }} />
+      <div className="absolute inset-0 opacity-75" style={{ background: 'var(--gradient-mesh)' }} />
       
-      {/* Subtle Floating Gradient Orbs */}
-      <div className="absolute top-20 left-[10%] w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />
-      <div className="absolute bottom-20 right-[10%] w-[400px] h-[400px] bg-secondary/12 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '2s' }} />
+      {/* Floating Gradient Orbs */}
+      <div className="absolute top-20 left-[10%] w-[450px] h-[450px] bg-primary/18 rounded-full blur-3xl animate-pulse-glow" />
+      <div className="absolute bottom-20 right-[10%] w-[450px] h-[450px] bg-secondary/20 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '2s' }} />
       
       {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(220_70%_50%_/_0.05)_1px,transparent_1px),linear-gradient(to_bottom,hsl(220_70%_50%_/_0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
