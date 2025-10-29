@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import AIModules from "@/components/AIModules";
 import Statistics from "@/components/Statistics";
+import DataResults from "@/components/DataResults";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SectionDivider from "@/components/SectionDivider";
@@ -28,6 +29,8 @@ const Index = () => {
       <SectionDivider variant="dots" />
       <Statistics />
       <SectionDivider variant="wave" />
+      <DataResults />
+      <SectionDivider variant="gradient" />
       <Contact />
       <Footer />
     </div>
